@@ -1,0 +1,11 @@
+---
+applications:
+- name: auth-server
+  memory: 1G
+  instances: 1
+  host: auth-server-myp
+  path: ./target/auth-server-0.0.1.jar
+  services:
+  - auth-mysql
+  env:
+   JAVA_OPTS: -Djava.security.egd=file:///dev/urandom -Dspring.profiles.active=techopcf
